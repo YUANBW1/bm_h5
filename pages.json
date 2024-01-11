@@ -1,0 +1,137 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, 
+		  {
+			"path": "pages/register/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},{
+			"path": "pages/verification/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/explore/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/wishlist/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/profile/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}
+		, {
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"animationType": "zoom-in",
+					"animationDuration": 300,
+					"titleNView": false
+				}
+			}
+
+		}, {
+			"path": "pages/productinfo/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		},{
+			"path": "pages/orders/index",
+			"style": {
+				"navigationBarTitleText": ""
+				 
+				 
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "rgba(236, 183, 187, 1)",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/images/home1.png",
+				"selectedIconPath": "static/images/home.png",
+				"text": "Home"
+			}, {
+				"pagePath": "pages/explore/index",
+				"iconPath": "static/images/explore1.png",
+				"selectedIconPath": "static/images/explore.png",
+				"text": "Explore"
+			},
+			{
+				"pagePath": "pages/wishlist/index",
+				"iconPath": "static/images/wishlist1.png",
+				"selectedIconPath": "static/images/wishlist.png",
+				"text": "Wishlist"
+			}, {
+				"pagePath": "pages/profile/index",
+				"iconPath": "static/images/profile1.png",
+				"selectedIconPath": "static/images/profile.png",
+				"text": "Profile"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "BM-TEST",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#F8F8F8",
+		"transparentTitle": "none"
+
+	},
+	"uniIdRouter": {}
+}
