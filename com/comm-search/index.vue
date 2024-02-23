@@ -3,8 +3,8 @@
 		<view class="search-input-box">
 			<view class="icon-box"></view>
 			<view v-if="type=='view'" class="input-box" @click="gotoPage">Search Product</view>
-			<input v-else class="input-box" :value="value" :focus="true" placeholder="Search Product"
-				maxlength="20"></input>
+			<input v-else class="input-box" :value="value" @input="inputValue" :focus="true"
+				placeholder="Search Product" maxlength="20" @keydown.enter="$emit('keydown',value)"></input>
 		</view>
 
 		<view class="search-btn-box"></view>
@@ -23,13 +23,17 @@
 				}
 			}
 		},
+
 		methods: {
+			inputValue(e) {
+				this.$emit("input", e.detail.value);
+			},
 			gotoPage() {
 
 				uni.navigateTo({
 					url: this.url
 				})
-			}
+			},
 
 		}
 	}

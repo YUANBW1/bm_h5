@@ -19,8 +19,8 @@
 					"titleNView": false
 				}
 			}
-		}, 
-		  {
+		},
+		{
 			"path": "pages/register/index",
 			"style": {
 				"navigationBarTitleText": "",
@@ -30,7 +30,7 @@
 					"titleNView": false
 				}
 			}
-		},{
+		}, {
 			"path": "pages/verification/index",
 			"style": {
 				"navigationBarTitleText": "",
@@ -67,8 +67,7 @@
 					"titleNView": false
 				}
 			}
-		}
-		, {
+		}, {
 			"path": "pages/search/index",
 			"style": {
 				"navigationBarTitleText": "",
@@ -87,13 +86,20 @@
 				"enablePullDownRefresh": false
 			}
 
-		},{
+		}, {
 			"path": "pages/orders/index",
 			"style": {
 				"navigationBarTitleText": ""
-				 
-				 
+
+
 			}
+		}, {
+			"path": "pages/productlist/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"tabBar": {

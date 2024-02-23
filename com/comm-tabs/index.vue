@@ -13,7 +13,7 @@
 		<!-- 根据当前选中的标签显示对应内容 -->
 		<view class="tab-content">
 			<view v-show="activeTab === tabIndex" :key="tabIndex" v-for="(tab, tabIndex) in tabs">
-			 <slot name="tab-content"></slot>
+				<slot name="tab-content"></slot>
 			</view>
 		</view>
 	</view>
@@ -52,6 +52,7 @@
 				this.$nextTick(() => {
 					this.updateUnderlineWidth();
 				});
+				this.$emit('click', this.tabs[index].label);
 
 			},
 			updateUnderlineWidth() {

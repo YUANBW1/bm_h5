@@ -17,14 +17,29 @@
 	} from "@/minx/list.js";
 	export default {
 		mixins: [dataFetchingMixin],
+		props: {
+			category: {
+				type: String,
+				default () {
+					return ""
+				}
+			},
+			keyword: {
+				type: String,
+				default () {
+					return ""
+				}
+			}
+		},
 		data() {
 			return {
 				data: [],
 				page: 1,
-				page_size: 2,
+				page_size: 10,
 				no_more: false,
 				loading: false,
 				total: 0,
+
 			};
 		},
 		mounted() {
@@ -43,6 +58,7 @@
 		},
 		methods: {
 			async getData() {
+
 				if (this.loading) {
 					await this.$sleep(500); //上一次未加载完成。延迟500毫秒后重新发出新的请求
 					await this.getData();
@@ -53,19 +69,22 @@
 					this.loading = false;
 					return;
 				}
+
 				let {
 					code,
 					data
 				} = await this.$api.product.productlist({
 					page_index: this.page,
-					page_size: this.page_size
+					page_size: this.page_size,
+					category: this.category && this.category != 'ALL' ? this.category : undefined,
+					keyword: this.keyword ? this.keyword : undefined,
 				});
 				if (code == 0) {
 					this.total = data.total;
 					this.data = this.data.concat(data.list)
 				}
 
-				await this.$sleep(1500);
+				await this.$sleep(500);
 				if (this.data.length >= data.total) {
 					this.no_more = true;
 				} else {
@@ -83,13 +102,21 @@
 			},
 
 			async pullup() {
-
-
 				await this.getData();
-
 			},
 
 		},
+		watch: {
+			category(n, o) {
+				this.onpulldown();
+			},
+			keyword(n, o) {
+				this.$delay(() => {
+					this.onpulldown();
+				}, 300);
+
+			}
+		}
 	};
 </script>
 
